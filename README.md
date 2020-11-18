@@ -2,7 +2,7 @@
 
 ### Entry level Blog project using Python django framework
 
-➡️ Python was used.
+➡️ Python was used.\n
 ➡️ sqlite3 was used.
 ➡️ Bootstrap was used.
 
