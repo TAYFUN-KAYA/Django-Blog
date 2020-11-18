@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}
+Makaleler
+{% endblock title %}
+
+
+
+{% block body %}
+
+
+{% if articles %}
+<div class="row">
+    
+    <div class="col-md-10 offset-md-2">
+        
+        <div class="col-lg-8">
+            <h2>Makaleler</h2>
+            <hr>
+            
+            <form action="">
+                {% csrf_token %}
+                <input type="text" name="keyword" class="input-sm" maxlength="64" placeholder="Search" style="border: 1px solid rgba(0, 0, 255, 0.68);">
+                <button type="submit" class="btn btn-primary btn-sm">Search</button>
+            </form>
+                   
+            
+            {% for article in articles %}
+            
+                <!-- Title -->
+                <a href="{% url 'article:detail' article.id %}" style="text-decoration: none;color: black;"><h1 class="mt-4">{{article.title}}</h1></a>
+
+                <!-- Author -->
+                <p class="lead">
+                    <p><small>Yazar: </small>{{article.author.username}}</p>
+                </p>
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p>{{article.created_date}}</p>
+
+                <hr>
+
+                {% if article.article_image %}
+                    <a href="{% url 'article:detail' article.id %}"><img class="img-fluid rounded" src="{{article.article_image.url}}"></a> 
+                {% endif %}
+                        
+                <p>{{article.content | safe | truncatewords:40}}</p>
+
+                <a style="float: right;" href="{% url 'article:detail' article.id %}" class="btn btn-primary">Devamını Oku</a> 
+                <hr style="background-color: rgba(0, 13, 255, 0.659);"> 
+                <br>
+                
+            {% endfor %}
+        </div>
+    </div>
+</div>
+    
+
+{% else %}
+<div class="col-md-10 offset-md-2">
+        
+    <div class="col-lg-8">
+        <hr>
+        <div class="alert alert-danger">Herhangi bir makale bulunamadı</div>
+    </div>
+</div>
+
+{% endif %}
+
+
+{% endblock body %}
+

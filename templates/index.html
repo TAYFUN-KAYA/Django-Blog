@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Anasayfa
+{% endblock title %}
+Anasayfa
+{% block body %}
+    <div class="jumbotron text-center">
+        <h2>Hoşgeldiniz</h2>
+        <small>Merhaba {{ad}} 
+          {% if soyad %}
+            {{soyad}}
+          {% endif %}
+        </small>
+        <br>
+        
+          {% for veri in bilgiler %}
+            <small>{{veri}}</small>
+          {% endfor %}
+        <br>
+        {% if request.user.is_authenticated %}
+          <p>GİRİŞ YAPILDI :{{request.user.username}}</p>
+        {% else %}
+          <p>GİRİŞ YAPILMADI</p>
+        {% endif %}
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+{% endblock body %}

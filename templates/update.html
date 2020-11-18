@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+Makale Ekle
+{% endblock title %}
+
+
+
+{% block body %}
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h3>Makale Güncelle</h3>
+    <br>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.media}}
+        {{form|crispy}}
+        <button class="btn btn-primary" type="submit">Güncelle</button>
+    </form>
+  </div>
+</div>
+
+{% endblock body %}
