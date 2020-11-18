@@ -49,3 +49,11 @@ MIDDLEWARE = [
 
 Code can be added to comment lines 🖥️
 
+
+![](https://github.com/TAYFUN-KAYA/Django-Blog/blob/main/media/resim_2020-11-18_235840.png)
+
+### Let's not forget that the ckeditor is important for ui / ux. It is very useful for form.
+
+
+
+
