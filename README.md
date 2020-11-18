@@ -1,10 +1,16 @@
+#✅
+
 # Django-Blog Project 🖥️
 
 ### Entry level Blog project using Python django framework
 
-➡️ Python was used.\n
+➡️ Python was used.
+
 ➡️ sqlite3 was used.
+
 ➡️ Bootstrap was used.
+
+➡️ Javascript was used.
 
 ![](https://github.com/TAYFUN-KAYA/Django-Blog/blob/main/media/1.png)
 
@@ -54,6 +60,7 @@ Code can be added to comment lines 🖥️
 
 ### Let's not forget that the ckeditor is important for ui / ux. It is very useful for form.
 
+You can get off to a good start for Django. 💡
 
 
-
+✅
